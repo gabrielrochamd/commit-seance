@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#111313">
+    <meta name="description" content="A private, local AI séance for the stories hidden in your Git history.">
+    <title>Commit Séance — listen to the repository</title>
+    <link rel="stylesheet" href="/styles.css">
+    <script src="/app.js" defer></script>
+  </head>
+  <body>
+    <main class="shell">
+      <header class="masthead">
+        <a class="wordmark" href="/" aria-label="Commit Séance home">
+          <span class="sigil" aria-hidden="true">☼</span>
+          <span>COMMIT SÉANCE</span>
+        </a>
+        <span class="privacy"><span aria-hidden="true"></span> LOCAL INFERENCE · PRIVATE HISTORY</span>
+      </header>
+
+      <section class="intro" aria-labelledby="page-title">
+        <p class="eyebrow">A small haunting for your repository</p>
+        <h1 id="page-title">Every commit<br>leaves <em>an echo.</em></h1>
+        <p class="intro-copy">A local open-weight model reads the dates, authors, and subjects in your Git history, then gathers those traces into a short ghost story. No source files leave this machine.</p>
+      </section>
+
+      <section class="séance" aria-label="Summon a story from Git history">
+        <div class="history-card">
+          <div class="card-heading">
+            <div>
+              <p class="eyebrow">The archive</p>
+              <h2 id="repository-name">Finding the repository…</h2>
+            </div>
+            <span class="count" id="commit-count">—</span>
+          </div>
+          <p class="history-note">Recent traces, read-only. Commit subjects and author names are shown exactly as stored in Git.</p>
+          <ol id="history-list" class="history-list" aria-live="polite"></ol>
+        </div>
+
+        <div class="summon-card">
+          <p class="eyebrow">Choose the voice</p>
+          <h2>What kind of echo?</h2>
+          <form id="seance-form">
+            <fieldset>
+              <legend class="visually-hidden">Story tone</legend>
+              <label class="tone-option">
+                <input type="radio" name="tone" value="uncanny" checked>
+                <span><strong>Uncanny</strong><small>For the things left unfinished</small></span>
+              </label>
+              <label class="tone-option">
+                <input type="radio" name="tone" value="tender">
+                <span><strong>Tender</strong><small>For the work worth remembering</small></span>
+              </label>
+            </fieldset>
+            <button id="summon-button" type="submit">
+              <span>Summon the echoes</span>
+              <span aria-hidden="true">↗</span>
+            </button>
+          </form>
+          <p class="model-note">Gemma 3 1B · Ollama · local CPU or GPU</p>
+        </div>
+      </section>
+
+      <section id="story-panel" class="story-panel" aria-live="polite" aria-label="Séance result">
+        <span class="story-star" aria-hidden="true">✳</span>
+        <p class="eyebrow">The veil is quiet</p>
+        <p class="story-placeholder">When you are ready, ask the repository what it remembers.</p>
+      </section>
+
+      <footer>
+        <span>Made for the stories that survive in version control.</span>
+        <span>Read-only · No accounts · No cloud AI</span>
+      </footer>
+    </main>
+  </body>
+</html>

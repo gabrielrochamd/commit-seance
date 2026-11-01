@@ -1,0 +1,13 @@
+{
+  "name": "commit-seance",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A local AI séance for the stories hidden in Git history",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test"
+  }
+}
